@@ -99,3 +99,12 @@ li {
         gap: 2rem;
     }
 }
+
+.button {
+    padding: 10px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    text-transform: capitalize;
+    background: green;
+}

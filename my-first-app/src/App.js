@@ -3,6 +3,7 @@ import data from "./data";
 
 
 
+
 // function App() {
 
 //     const firstName = "Phani"
@@ -88,7 +89,7 @@ import data from "./data";
 
 // components
 
-//React Fragmenets
+//React Fragments
 
 //Styles
 
@@ -116,7 +117,7 @@ import data from "./data";
 
 // const ImageComponent = () => {
 //     return (
-//         <img src='https://occ-0-4857-2186.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABURO1L3trQRai2nuUMVdTmqfyeWWrjnwqWrFF-G8f461NYv45nuQlM1GYkBSZ8_ThsKt-0EMJpF1bl1Sm9y_oPG3HMTHKLSySJpHZ0YOZ374RoT9qE4JWWeMkbFMQ19FP10S.jpg?r=4f5' alt='netflic image show' />
+//         <img src='https://occ-0-4857-2186.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABURO1L3trQRai2nuUMVdTmqfyeWWrjnwqWrFF-G8f461NYv45nuQlM1GYkBSZ8_ThsKt-0EMJpF1bl1Sm9y_oPG3HMTHKLSySJpHZ0YOZ374RoT9qE4JWWeMkbFMQ19FP10S.jpg?r=4f5' alt='netflix image show' />
 //     );
 // };
 
@@ -1359,36 +1360,88 @@ import data from "./data";
 //     </article>
 // };
 
-//Example 2 for props and HTML code
+// Example 2 for props and HTML code
+// const App = () => {
+//     return (
+//         <main className="container">
+//             <ul className="comments-container">
+//                 {
+//                     data.map((eachComment) => {
+//                         const { id, email, name, body } = eachComment
+//                         return <li key={id} className='comment'>
+//                             <div className="comments-header">
+//                                 <h3 className="email">{email}</h3>
+//                                 <h3 className="name">{name}</h3>
+//                             </div>
+//                             <p className="message">{body}</p>
+//                         </li>
+//                     })
+//                 }
+//                 {/* this is for referance */}
+//                 {/* <li className='comment'>
+//                     <div className="comments-header">
+//                         <h3 className='email'>email@email.com</h3>
+//                         <h3 className='name'>some random name </h3>
+//                     </div>
+//                     <p className='message'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic eum nihil esse iure atque animi voluptatum mollitia numquam! Magni voluptas assumenda nihil omnis obcaecati illo possimus necessitatibus. Perferendis, doloribus deserunt!</p>
+//                 </li> */}
+//             </ul>
+//         </main>
+//     );
+// };
+
+
+// Event Handling
+
+// const App = () => {
+//     // arrow function
+//     // const clickHandle = (e) => {
+//     //     console.log(e);
+//     // };
+
+//     // Regular function
+//     function clickHandle(e, firstName) {
+//         console.log("hello i am regular function", e, firstName);
+//     };
+//     return (
+//         <main className='container'>
+//             {/* <button className='button' onClick={function (e) {
+//                 return clickHandle(e, "srikanth")
+//             }}>Click me</button> */}
+
+//             {/* This is the single line of the code for the above code  */}
+//             <button className='button' onClick={(e) => clickHandle(e, "srikanth")}>
+//                 Click me
+//             </button>
+//         </main>
+//     );
+// };
+
+// Exports, Imports and Export default data 
+// There are two types of exports one is export deafult another one is named export 
+//In deafult export we can import that component name will be our choice.
+// In named export have must be used same component name and also we can import in component name wrote {} brackets and also same time import the multipule components 
+
+// import ListItem from './ListItem';
+
+import { ListItem } from './ListItem';
 
 const App = () => {
     return (
-        <main className="container">
+        <main className='container'>
             <ul className="comments-container">
-                {
-                    data.map((eachComment) => {
-                        const { id, email, name, body } = eachComment
-                        return <li key={id} className='comment'>
-                            <div className="comments-header">
-                                <h3 className="email">{email}</h3>
-                                <h3 className="name">{name}</h3>
-                            </div>
-                            <p className="message">{body}</p>
-                        </li>
-                    })
-                }
-                {/* this is for referance */}
-                {/* <li className='comment'>
-                    <div className="comments-header">
-                        <h3 className='email'>email@email.com</h3>
-                        <h3 className='name'>some random name </h3>
-                    </div>
-                    <p className='message'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic eum nihil esse iure atque animi voluptatum mollitia numquam! Magni voluptas assumenda nihil omnis obcaecati illo possimus necessitatibus. Perferendis, doloribus deserunt!</p>
-                </li> */}
+                {data.map((eachComment) => {
+                    const { id, email, name, body
+                    } = eachComment
+                    return (
+                        <ListItem key={id} id={id} email={email} name={name} body={body} />
+                    )
+                })}
             </ul>
+
         </main>
-    )
-}
+    );
+};
 
 
 
